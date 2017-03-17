@@ -1,16 +1,19 @@
 @import url('normalize.css');
-@import url('../fonts/museosanscyrl.css');
+@import url('../fonts/opensans.css');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Museo Sans Cyrl';
-  padding-top:40px;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  padding: 40px 0;
 }
 
 .schedule {
+  max-width: 1190px;
+  margin: 0 auto;
   padding: 0 15px;
 }
 
@@ -38,21 +41,27 @@ body {
   width: 100%;
   max-width: 700px;
   display: flex;
-  flex: 1;
   align-items: stretch;
   justify-content: space-between;
-  flex-direction: column;
-  box-shadow: 0 0 24px 0 rgba(0,0,0,.03);
-  border: 1px solid rgba(0,0,0,.05);
-  margin: 5px auto;
+  flex-direction: column-reverse;
+  box-shadow: 0 0 16px 3px rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.15);
+  margin: 20px auto;
+  border-radius: 5px;
 }
 
 .schedule-card-lecture{
+  width: 100%;
   padding: 20px;
+  padding-left: 30px;
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .schedule-card-lecture > div {
+  width: 100%;
   margin: 8px 0;
 }
 
@@ -89,13 +98,15 @@ body {
 }
 
 .schedule-card-lecture-name {
-  font-weight: bold;
+  font-weight: 300;
   font-size: 18px;
   padding-bottom: 8px;
+  border-bottom: 1px dotted rgba(0,0,0,.2);
 }
 
 .schedule-card-lecture-datetime {
   font-size: 14px;
+  font-weight: 300;
   /*font-style: italic;*/
 }
 
@@ -103,11 +114,78 @@ body {
   font-size: 16px;
 }
 
+.schedule-card-lecture > .schedule-card-lecture-teacher {
+  margin-bottom: 15px;
+}
+
+.schedule-card-lecture-teacher {
+  font-weight: 400;
+}
+
+.schedule-card-watch {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  /*border: 1px solid;*/
+  color: #ff0f0f;
+  background-color: rgba(255,15,15,.9);
+  color: #fff;
+  text-decoration: none;
+  /*margin: 15px;*/
+  margin-top: auto;
+  border-radius: 5px;
+  position: relative; bottom: 0;
+  /*position: absolute; bottom: 0;*/
+
+}
+
+.schedule-card-watch-disabled {
+  background-color: #ccc;
+  color: #666;
+  border: 0;
+}
+
+.schedule-card-lecture-datetime-ended {
+  color: #888;
+}
+
+
+
+
+
 @media screen and (min-width: 600px) {
-  .schedule-card {
-    flex-direction: row;
-  }
   .schedule-card-schools-wrapper {
     flex-direction: column;
+  }
+  .schedule-card {
+    flex-direction: row;
+    margin: 20px auto;
+  }
+  .schedule-card-watch {
+    display: inline-block;
+    width: auto;
+    /*margin: auto;*/
+    /*text-align: center;*/
+    padding: 10px 30px;
+    /*align-self: flex-end;*/
+
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .schedule-card {
+    margin: 10px;
+    max-width: calc(50% - 40px);
+    flex-direction: row;
+  }
+  .schedule-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .schedule-card-watch {
+    width: 100%;
+    display: block;
   }
 }
