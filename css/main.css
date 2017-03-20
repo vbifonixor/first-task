@@ -122,6 +122,12 @@ body {
   font-weight: 400;
 }
 
+.schedule-card-lecture-teacher > a {
+  text-decoration: none;
+  color: #ff0f0f;
+  border-bottom: 1px dotted;
+}
+
 .schedule-card-watch {
   width: 100%;
   display: block;
@@ -150,9 +156,86 @@ body {
   color: #888;
 }
 
+.lecturer-modal-wrapper {
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.lecturer-modal-wrapper[data-shown='true'] {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
 
+.lecturer-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  overflow: visible;
+  padding: 20px;
+  box-shadow: 0 0 80px rgba(0,0,0,.3);
+}
 
+.lecturer-modal-close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #333;
+}
 
+.lecturer-modal-heading {
+  font-size: 24px;
+  font-weight: 300;
+  /*margin-top: 0;*/
+}
+
+.lecturer-modal-subheading {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.lecturer-modal-photo {
+  max-width: 100%;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.lecturer-modal-text {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 410px) {
+  .lecturer-modal-photo {
+    max-width: 200px;
+    margin-bottom: 5px;
+  }
+
+  .lecturer-modal-heading {
+    font-size: 26px;
+    margin: 10px 0;
+  }
+
+  .lecturer-modal-subheading {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+}
 
 @media screen and (min-width: 600px) {
   .schedule-card-schools-wrapper {
@@ -169,7 +252,20 @@ body {
     /*text-align: center;*/
     padding: 10px 30px;
     /*align-self: flex-end;*/
+  }
 
+  .lecturer-modal-wrapper {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .lecturer-modal {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
   }
 }
 
