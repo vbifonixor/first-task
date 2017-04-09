@@ -40,7 +40,7 @@ body {
 .schedule-card {
   width: 100%;
   max-width: 700px;
-  display: flex;
+  display: inline-flex;
   align-items: stretch;
   justify-content: space-between;
   flex-direction: column-reverse;
@@ -260,6 +260,13 @@ body {
   }
 }
 
+@media screen and (min-width: 730px) {
+  .schedule-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .schedule-card {
     margin: 10px;
@@ -267,7 +274,7 @@ body {
     flex-direction: row;
   }
   .schedule-wrapper {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 992px;
