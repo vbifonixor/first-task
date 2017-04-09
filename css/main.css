@@ -269,9 +269,10 @@ body {
   }
   .schedule-wrapper {
     display: flex;
-  flex: 1;
+    flex: 1;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 992px;
   }
   .schedule-card-watch {
     width: 100%;
